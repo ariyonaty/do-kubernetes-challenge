@@ -20,4 +20,6 @@ curl -X GET -v -O \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $DO_TOKEN" \
     "https://api.digitalocean.com/v2/kubernetes/clusters/$CLUSTER_ID/kubeconfig"
+chmod 600 kubeconfig
 
+export KUBECONFIG=$PWD/kubeconfig

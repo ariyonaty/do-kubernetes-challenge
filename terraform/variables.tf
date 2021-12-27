@@ -21,3 +21,8 @@ variable "slug_size" {
   description = "Size of slug/node"
   default     = "s-1vcpu-2gb"
 }
+
+variable "node_count" {
+  description = "Number of nodes in cluster"
+  default     = "3"
+}
