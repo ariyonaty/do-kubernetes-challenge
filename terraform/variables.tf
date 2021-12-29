@@ -7,6 +7,16 @@ variable "private_key" {
   default     = "../ssh/do_key"
 }
 
+variable "cluster_name" {
+  description = "Name of k8s cluster"
+  default     = "do-kubernetes-challenge"
+}
+
+variable "pool_name" {
+  description = "Name of k8s pool"
+  default     = "worker-pool"
+}
+
 variable "region" {
   description = "DigitalOcean region"
   default     = "sfo3"
@@ -14,7 +24,7 @@ variable "region" {
 
 variable "kube_version" {
   description = "Version of Kubernetes"
-  default     = "1.21.5-do.0"
+  default     = "1.19.15-do.0"
 }
 
 variable "slug_size" {
@@ -24,5 +34,5 @@ variable "slug_size" {
 
 variable "node_count" {
   description = "Number of nodes in cluster"
-  default     = "3"
+  default     = "2"
 }

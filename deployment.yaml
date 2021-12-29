@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment
+  labels:
+    app: python-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-deployment
+  template:
+    metadata:
+      labels:
+        app: python-deployment
+    spec:
+      containers:
+      - name: python-deployment
+        image: trow.kube-public:31000/flask_demo:0.0.1
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: py-service
+spec:
+  selector:
+    app: python-deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 5000
+  type: LoadBalancer
+
