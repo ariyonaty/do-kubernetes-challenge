@@ -2,11 +2,6 @@ variable "do_token" {
   description = "DigitalOcean API Token"
 }
 
-variable "private_key" {
-  description = "SSH private key for provisioning instance"
-  default     = "../ssh/do_key"
-}
-
 variable "cluster_name" {
   description = "Name of k8s cluster"
   default     = "do-kubernetes-challenge"

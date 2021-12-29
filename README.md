@@ -104,8 +104,7 @@ kubectl create -f deployment.yaml
 Get IP from `kubectl get service` (this may take a while) and navigate to http://<IP>:8080. Refreshing a couple of times will show the loadbalancing in effect.
 
 To delete resources: 
-```
-kubectl delete -f deployment.yaml
+```kubectl delete -f deployment.yaml
 terraform -chdir=terraform/ destroy -var "do_token=${DO_PAT}"
 ```
 
